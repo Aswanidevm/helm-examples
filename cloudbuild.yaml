@@ -5,6 +5,9 @@ steps:
       - -c
       - |
         gcloud compute os-login describe-profile
+        for i in $(gcloud compute os-login ssh-keys list); do echo $i; gcloud compute os-login ssh-keys remove --key $i; done
+        echo "hello"
+        gcloud compute os-login describe-profile
         # gcloud compute scp --recurse /workspace new-instance:~/deploymentscripts/ --zone=asia-south1-a --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
         # gcloud compute ssh new-instance --zone=asia-south1-a --project jmc-devsecops --command 'pwd' --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
       
