@@ -4,11 +4,9 @@ steps:
     args: 
       - -c
       - |
-        sudo cat  /builder/home/.ssh/google_compute_engine
-        ls -al /builder/home/.ssh/google_compute_engine
-        #gcloud compute scp --recurse /workspace ftwomicroinstance:~/deploymentscripts/ --zone=asia-south1-a --tunnel-through-iap --force-key-file-overwrite
+        gcloud compute scp --recurse /workspace ftwomicroinstance:~/deploymentscripts/ --zone=asia-south1-a --tunnel-through-iap --force-key-file-overwrite
+        gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'pwd' --tunnel-through-iap --force-key-file-overwrite
         pwd
-        #gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'pwd' --tunnel-through-iap --force-key-file-overwrite
 
 
 
