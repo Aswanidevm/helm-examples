@@ -1,18 +1,14 @@
 steps:
-  # - name: 'gcr.io/cloud-builders/gcloud'  # Use the official gcloud builder image
-  #   entrypoint: /bin/bash
-  #   args: 
-  #     - -c
-  #     - |
-  #       ls
-  #       pwd
-        # gcloud compute scp --recurse /workspace ftwomicroinstance:~/deploymentscripts/ --zone=asia-south1-a --tunnel-through-iap
-        # pwd
-        # gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'pwd' 
+  - name: 'gcr.io/cloud-builders/gcloud'  # Use the official gcloud builder image
+    entrypoint: /bin/bash
+    args: 
+      - -c
+      - |
+        ls
+        pwd
+        gcloud compute scp --recurse /workspace ftwomicroinstance:~/deploymentscripts/ --zone=asia-south1-a --tunnel-through-iap
+        pwd
+        gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'pwd' 
 
-  - name: 'gcr.io/cloud-builders/rsync'
-    args: ['-avz', '--exclude=.git', './workspace/', 'ftwomicroinstance:~/deploymentscripts/']
 
-        
- 
 
