@@ -25,7 +25,7 @@ steps:
     args: 
       - -c
       - |
-        gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'cd .. && rm -rf $BUILD_ID && ls'  --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no      
+        gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command ' rm -rf $BUILD_ID && ls'  --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no      
 
 
 
