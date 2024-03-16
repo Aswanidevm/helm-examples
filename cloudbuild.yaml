@@ -5,8 +5,8 @@ steps:
       - -c
       - |
 
-        gcloud compute scp --recurse /workspace ftwomicroinstance:~/deploymentscripts/ --zone=asia-south1-a --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
-        gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'pwd' --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
+        gcloud compute scp --recurse /workspace new-instance:~/deploymentscripts/ --zone=asia-south1-a --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
+        gcloud compute ssh new-instance --zone=asia-south1-a --project jmc-devsecops --command 'pwd' --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
       
 
 
