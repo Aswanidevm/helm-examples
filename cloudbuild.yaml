@@ -4,9 +4,11 @@ steps:
     args: 
       - -c
       - |
+
         gcloud compute scp --recurse /workspace ftwomicroinstance:~/deploymentscripts/ --zone=asia-south1-a --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
         gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'pwd' --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
-        cat /builder/home/.ssh/google_compute_known_hosts
+      
+
 
 
 
