@@ -21,6 +21,12 @@ steps:
   
 
 
+  - name: 'gcr.io/cloud-builders/helm'
+    args: ['repo', 'add', 'stable', 'https://charts.helm.sh/stable']
+  - name: 'gcr.io/cloud-builders/helm'
+    args: ['update', 'repo']
+  - name: 'gcr.io/cloud-builders/helm'
+    args: ['install', 'hello-world', '--namespace', 'default']
 
 
 
