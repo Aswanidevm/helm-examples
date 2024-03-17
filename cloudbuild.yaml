@@ -21,7 +21,7 @@ steps:
   
 
     - name: 'gcr.io/cloud-builders/docker'
-      args: ['build', '-t', 'gcr.io/$PROJECT_ID/hello-world:latest', '.']
+      args: ['build', '-t', 'gcr.io/jmc-devsecops/hello-world:latest', '.']
     - name: 'gcr.io/$PROJECT_ID/cloud-builders-helm'
       args: ['upgrade', '--install', 'my-hello-world', '--namespace', 'default', 'my-hello-world']
   # - name: 'gcr.io/cloud-builders/helm'
