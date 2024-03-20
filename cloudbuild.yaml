@@ -30,12 +30,12 @@ steps:
 
 
       env:
-      - name: CLOUDSDK_COMPUTE_REGION
-        value: "asia-south1"  # Replace with your cluster region
-      - name: CLOUDSDK_COMPUTE_ZONE
-        value: "asia-south1-a"  # Replace with your cluster zone (if applicable)
-      - name: CLOUDSDK_CONTAINER_CLUSTER
-        value: "jmc-autopilot-demo"
+        - name: CLOUDSDK_COMPUTE_REGION
+          value: "asia-south1"  # Replace with your cluster region
+        - name: CLOUDSDK_COMPUTE_ZONE
+          value: "asia-south1-a"  # Replace with your cluster zone (if applicable)
+        - name: CLOUDSDK_CONTAINER_CLUSTER
+          value: "jmc-autopilot-demo"
 
     # - name: 'gcr.io/cloud-builders/docker'
     #   args: ['build', '-t', 'gcr.io/jmc-devsecops/hello-world:latest', '.']
