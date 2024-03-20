@@ -19,7 +19,7 @@ steps:
         gcloud compute scp --recurse /workspace ftwomicroinstance:~/deploymentscripts/$BUILD_ID --zone=asia-south1-a --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
         gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'cd deploymentscripts/$BUILD_ID/workspace/ && pwd && ls'  --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no
 
-  - name: 'gcr.io/$PROJECT_ID/cloud-builders-helm'
+  - name: 'gcr.io/jmc-devsecops/cloud-builders-helm'
     args:
       - 'upgrade'
       - '--install'
@@ -30,7 +30,7 @@ steps:
 
     # - name: 'gcr.io/cloud-builders/docker'
     #   args: ['build', '-t', 'gcr.io/jmc-devsecops/hello-world:latest', '.']
-    # - name: 'gcr.io/$PROJECT_ID/cloud-builders-helm'
+    # - name: 'gcr.io/jmc-devsecops/cloud-builders-helm'
     #   args: ['upgrade', '--install', 'my-hello-world', '--namespace', 'default', 'my-hello-world']
   # - name: 'gcr.io/cloud-builders/helm'
   #   args: ['repo', 'add', 'stable', 'https://charts.helm.sh/stable']
