@@ -45,6 +45,13 @@ steps:
   #   args: ['update', 'repo']
   - name: 'gcr.io/jmc-devsecops/helm'
     args: ['install', 'hello-world', '--namespace', 'default']
+    env:
+      - name: CLOUDSDK_COMPUTE_REGION
+        value: "asia-south1"  # Replace with your cluster region
+      - name: CLOUDSDK_COMPUTE_ZONE
+        value: "asia-south1-a"  # Replace with your cluster zone (if applicable)
+      - name: CLOUDSDK_CONTAINER_CLUSTER
+        value: "jmc-autopilot-demo"
 
 
 
