@@ -27,8 +27,6 @@ steps:
       - '--namespace'
       - 'default'  # Replace with your desired namespace
       - '.deploymentscripts/$BUILD_ID/workspace/charts'  # Replace with the actual path to your Helm chart
-
-
     env:
       - name: CLOUDSDK_COMPUTE_REGION
         value: "asia-south1"  # Replace with your cluster region
