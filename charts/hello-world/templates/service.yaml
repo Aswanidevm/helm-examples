@@ -1,5 +1,8 @@
 apiVersion: v1
 kind: Service
+annotations:
+    cloud.google.com/neg: '{"ingress": true}'  # Enables internal load balancing
+    networking.gke.io/load-balancer-type: "Internal"  # Specifies internal load balancer
 metadata:
   name: {{ include "hello-world.fullname" . }}
   labels:
