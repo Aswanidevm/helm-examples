@@ -6,6 +6,8 @@ metadata:
   labels:
     {{- include "hello-world.labels" . | nindent 4 }}
 spec:
+  selector:
+    {{- include "hello-world.selectorLabels" . | nindent 4 }}
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
@@ -15,5 +17,4 @@ spec:
   annotations:
     cloud.google.com/neg: '{"ingress": true}'  # Enables internal load balancing
     networking.gke.io/load-balancer-type: "Internal"  # Specifies internal load balancer
-  selector:
-    {{- include "hello-world.selectorLabels" . | nindent 4 }}
+  
